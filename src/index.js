@@ -323,10 +323,9 @@ export default class Api {
       }
     }
 
-    // At this point the result will contain a data object and the
-    // response. Maintain backwards compatibility by only returning
-    // the data.
-    return obj.then(r => r.data)
+    // Return response.  Breaking change between version 0.2.6 and later versions, as this
+    // function has previously been returning response.data
+    return obj
   }
 }
 
